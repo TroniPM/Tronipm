@@ -7,7 +7,7 @@
 
 <!-- <p align="left"> <a href="https://twitter.com/paulomatew" target="blank"><img src="https://img.shields.io/twitter/follow/paulomatew?logo=twitter&style=for-the-badge" alt="paulomatew" /></a> </p>-->
 
-- ⚡ Fun fact **I'm pretty good at CSGO and Valorant =}**
+- ⚡ Fun fact: **I'm pretty good at CSGO and Valorant =}**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
