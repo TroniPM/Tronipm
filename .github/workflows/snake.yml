@@ -1,13 +1,9 @@
-name: Generate Datas
+name: Generate Profile Stats
 
 on:
-  schedule: # executa a cada 12 horas
-    - cron: "0 */12 * * *"
-  
-  # permite rodar o script manualmente a qualquer momento
+  schedule:
+    - cron: "0 */23 * * *"
   workflow_dispatch:
-  
-  # executa a cada push na branch main/master
   push:
     branches:
     - main
@@ -20,7 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # Gera a cobrinha
+      # Cria a pasta dist caso não exista
+      - name: Create dist directory
+        run: mkdir -p dist
+
+      # Gera a cobrinha e salva na pasta dist/
       - uses: Platane/snk@v3
         with:
           github_user_name: tronipm
@@ -30,7 +30,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # Faz o push da animação para a branch "output"
+      # Gera os troféus e salva na pasta dist/
+      - name: Generate trophy card
+        uses: soulteary/github-profile-trophy-action@v1.0.0
+        with:
+          options: 'username=tronipm&theme=transparent&no-frame=true&column=7&margin-w=15'
+          path: 'dist/trophy.svg'
+
+      # Envia todos os arquivos da pasta dist/ para a branch output
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
