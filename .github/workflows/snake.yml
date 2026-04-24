@@ -34,7 +34,7 @@ jobs:
       - name: Generate trophy card
         uses: soulteary/github-profile-trophy-action@v1.0.0
         with:
-          options: 'username=tronipm&theme=transparent&no-frame=true&no-bg=true&rank=SSS,SS,S,AAA,AA,A&column=4&margin-w=15&margin-h=15'
+          options: 'username=tronipm&theme=transparent&no-frame=true&no-bg=true&row=2&column=4&margin-w=15&margin-h=15'
           path: 'dist/trophy.svg'
 
       # Envia todos os arquivos da pasta dist/ para a branch output
