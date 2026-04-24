@@ -44,6 +44,14 @@
   <img src="https://github-readme-stats.vercel.app/api?username=tronipm&show_icons=true&theme=transparent&hide_border=true&count_private=true" alt="GitHub Stats" height="165" />
 </p>
 
+### 🏆 Meus Troféus
+
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=tronipm&theme=transparent&no-frame=true&column=7&margin-w=15" alt="tronipm trophies" />
+  </a>
+</p>
+
 ### 🐍 Contributions
 
 <p align="center">
