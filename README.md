@@ -8,6 +8,7 @@
   <a href="https://paulomatew.com" target="_blank">
     <img src="https://img.shields.io/badge/Website-paulomatew.com-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" />
   </a>
+  <br>
   <a href="https://twitter.com/paulomatew" target="_blank">
     <img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white" alt="X" />
   </a>
