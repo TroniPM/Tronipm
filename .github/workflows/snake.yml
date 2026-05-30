@@ -59,7 +59,7 @@ jobs:
 
       # Envia todos os arquivos da pasta dist/ para a branch output
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: TroniPM/ghaction-github-pages@main
         with:
           target_branch: output
           build_dir: dist
