@@ -43,12 +43,12 @@
   <img src="https://raw.githubusercontent.com/tronipm/tronipm/output/trophy.svg" alt="tronipm trophies" />
 </p>
 
-<!--### 📊 My Statistics
+### 📊 My Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tronipm&layout=compact&theme=transparent&hide_border=true&exclude_repo=DarkEden-With-Docker,opendarkeden_server,darkclient_1,DarkEden-Client-on-Linux,darkserver_1,darkeden-v2-serverfiles,darkeden-v2-clientfiles" alt="Top Languages" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api?username=tronipm&show_icons=true&theme=transparent&hide_border=true&count_private=true" alt="GitHub Stats" height="165" />
-</p>-->
+  <img src="https://raw.githubusercontent.com/tronipm/tronipm/output/top-langs.svg" alt="Top Languages" height="165" />
+  <img src="https://raw.githubusercontent.com/tronipm/tronipm/output/github-stats.svg" alt="GitHub Stats" height="165" />
+</p>
 
 
 ### 🐍 Contributions
