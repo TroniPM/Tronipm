@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    name: Jobs to update datas
+    name: Deploying...
     runs-on: ubuntu-latest
     permissions:
       contents: write
