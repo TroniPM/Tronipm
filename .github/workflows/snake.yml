@@ -23,7 +23,7 @@ jobs:
         run: mkdir -p dist
 
       # Gera a cobrinha e salva na pasta dist/
-      - uses: Platane/snk@v3
+      - uses: TroniPM/snk@main
         with:
           github_user_name: tronipm
           outputs: |
