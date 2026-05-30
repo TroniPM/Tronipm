@@ -53,7 +53,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: 'username=tronipm&layout=compact&theme=transparent&hide_border=true&exclude_repo=DarkEden-With-Docker,opendarkeden_server,darkclient_1,DarkEden-Client-on-Linux,darkserver_1,darkeden-v2-serverfiles,darkeden-v2-clientfiles'
+          options: 'username=tronipm&layout=compact&theme=transparent&hide_border=true&exclude_repo=DarkEden-With-Docker,opendarkeden_server,darkclient_1,DarkEden-Client-on-Linux,darkserver_1,darkeden-v2-serverfiles,darkeden-v2-clientfiles,ExtractData'
           path: dist/top-langs.svg
           token: ${{ secrets.PAT }}
 
