@@ -41,7 +41,7 @@ jobs:
 
       # Gera o card de estatísticas do GitHub (inclui dados privados via PAT)
       - name: Generate GitHub Stats card
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: TroniPM/github-readme-stats-action@main
         with:
           card: stats
           options: 'username=tronipm&show_icons=true&theme=transparent&hide_border=true&count_private=true'
@@ -50,7 +50,7 @@ jobs:
 
       # Gera o card de linguagens mais usadas
       - name: Generate Top Languages card
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: TroniPM/github-readme-stats-action@main
         with:
           card: top-langs
           options: 'username=tronipm&layout=compact&theme=transparent&hide_border=true&exclude_repo=DarkEden-With-Docker,opendarkeden_server,darkclient_1,DarkEden-Client-on-Linux,darkserver_1,darkeden-v2-serverfiles,darkeden-v2-clientfiles,ExtractData'
