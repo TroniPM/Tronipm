@@ -29,10 +29,11 @@ jobs:
           python-version: '3.x'
 
       # Busca dados reais de tráfego via GitHub API, acumula e gera o badge SVG
+      # Requer PAT com escopo "repo" — GITHUB_TOKEN padrão não tem acesso à Traffic API
       - name: Update profile view counter
         run: python scripts/update_counter.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
           REPO: ${{ github.repository }}
 
       # Gera a cobrinha e salva na pasta dist/
