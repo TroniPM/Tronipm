@@ -50,9 +50,14 @@ def fetch_traffic() -> list:
             "X-GitHub-Api-Version": "2022-11-28",
         },
     )
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        data = json.loads(resp.read())
-    return data.get("views", [])
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        return data.get("views", [])
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        print(f"  GitHub API error {e.code}: {body}")
+        raise
 
 # ---------------------------------------------------------------------------
 # Accumulate without duplicating days already counted
