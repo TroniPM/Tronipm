@@ -35,7 +35,7 @@ def load_previous_state() -> dict:
             return json.loads(resp.read())
     except Exception:
         # First run or branch doesn't exist yet
-        return {"total": 0, "last_processed": None}
+        return {"total": 1672, "last_processed": None} # 1672 quando foi feito
 
 # ---------------------------------------------------------------------------
 # Fetch traffic data from GitHub API
@@ -59,7 +59,7 @@ def fetch_traffic() -> list:
 # ---------------------------------------------------------------------------
 def accumulate(state: dict, views: list) -> dict:
     last_processed = state.get("last_processed")
-    total = state.get("total", 1672) # 1672 quando foi feito
+    total = state.get("total", 0)
     newest_timestamp = last_processed
 
     for entry in views:
