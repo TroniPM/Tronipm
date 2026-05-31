@@ -60,20 +60,21 @@ def fetch_traffic() -> list:
 def accumulate(state: dict, views: list) -> dict:
     last_processed = state.get("last_processed")
     total = state.get("total", 0)
-    newest_timestamp = last_processed
 
-    for entry in views:
-        ts = entry.get("timestamp")  # ISO 8601, e.g. "2026-05-30T00:00:00Z"
-        count = entry.get("count", 0)
-        if ts is None:
-            continue
-        # Only count days strictly after the last processed timestamp
-        if last_processed is None or ts > last_processed:
-            total += count
-            if newest_timestamp is None or ts > newest_timestamp:
-                newest_timestamp = ts
+    # Pega apenas o dia mais recente retornado pela API
+    valid = [e for e in views if e.get("timestamp") is not None]
+    if not valid:
+        return {"total": total, "last_processed": last_processed}
 
-    return {"total": total, "last_processed": newest_timestamp}
+    latest = max(valid, key=lambda e: e["timestamp"])
+    ts = latest["timestamp"]
+
+    # Só soma se for um dia ainda não contabilizado
+    if last_processed is None or ts > last_processed:
+        total += latest.get("count", 0)
+        last_processed = ts
+
+    return {"total": total, "last_processed": last_processed}
 
 # ---------------------------------------------------------------------------
 # Generate a flat-square SVG badge (no external dependencies)
