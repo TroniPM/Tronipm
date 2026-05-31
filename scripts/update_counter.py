@@ -14,13 +14,12 @@ Requires env vars:
 import json
 import os
 import urllib.request
-import urllib.error
 from datetime import datetime, timezone
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
+TRAFFIC_FILE = "/tmp/traffic.json"  # gerado pelo gh CLI no step anterior
 REPO = os.environ.get("REPO", "tronipm/tronipm")
 RAW_COUNTER_URL = f"https://raw.githubusercontent.com/{REPO}/output/counter.json"
 OUTPUT_DIR = "dist"
@@ -38,26 +37,12 @@ def load_previous_state() -> dict:
         return {"total": 1672, "last_processed": None} # 1672 quando foi feito
 
 # ---------------------------------------------------------------------------
-# Fetch traffic data from GitHub API
+# Fetch traffic data — lê o arquivo gerado pelo gh CLI no step anterior
 # ---------------------------------------------------------------------------
 def fetch_traffic() -> list:
-    url = f"https://api.github.com/repos/{REPO}/traffic/views"
-    req = urllib.request.Request(
-        url,
-        headers={
-            "Authorization": f"Bearer {GITHUB_TOKEN}",
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            data = json.loads(resp.read())
-        return data.get("views", [])
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        print(f"  GitHub API error {e.code}: {body}")
-        raise
+    with open(TRAFFIC_FILE, encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("views", [])
 
 # ---------------------------------------------------------------------------
 # Accumulate without duplicating days already counted
