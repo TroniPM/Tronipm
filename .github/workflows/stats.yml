@@ -22,6 +22,19 @@ jobs:
       - name: Create dist directory
         run: mkdir -p dist
 
+      # Configura Python para o script de contador
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Busca dados reais de tráfego via GitHub API, acumula e gera o badge SVG
+      - name: Update profile view counter
+        run: python scripts/update_counter.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+
       # Gera a cobrinha e salva na pasta dist/
       - uses: TroniPM/snk@main
         with:

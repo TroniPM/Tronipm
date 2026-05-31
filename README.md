@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Paulo Mateus</h1>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=tronipm&style=flat-square&color=blue" alt="Profile views" />
+  <img src="https://raw.githubusercontent.com/tronipm/tronipm/output/profile-views.svg" alt="Profile views" />
 </p>
 
 <p align="center">
