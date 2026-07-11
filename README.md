@@ -1,8 +1,8 @@
 <h1 align="center">Hi 👋, I'm Paulo Mateus</h1>
 
-<p align="center">
+<!--<p align="center">
   <img src="https://raw.githubusercontent.com/tronipm/tronipm/output/profile-views.svg" alt="Profile views" />
-</p>
+</p>-->
 
 <p align="center">
   <a href="https://paulomatew.com" target="_blank">
