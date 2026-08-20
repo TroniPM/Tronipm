@@ -67,7 +67,7 @@ jobs:
         uses: TroniPM/github-readme-stats-action@main
         with:
           card: top-langs
-          options: 'username=tronipm&layout=compact&theme=transparent&hide_border=true&exclude_repo=DarkEden-With-Docker,opendarkeden_server,darkclient_1,DarkEden-Client-on-Linux,darkserver_1,darkeden-v2-serverfiles,darkeden-v2-clientfiles,ExtractData'
+          options: 'username=tronipm&layout=compact&theme=transparent&hide_border=true&exclude_repo=darkeden-v2-sourcefiles-server-and-client,darkeden-v2-serverfiles,DarkEden-With-Docker,opendarkeden_server,darkclient_1,DarkEden-Client-on-Linux,darkserver_1,darkeden-v2-serverfiles,darkeden-v2-clientfiles,ExtractData'
           path: dist/top-langs.svg
           token: ${{ secrets.PAT }}
 
